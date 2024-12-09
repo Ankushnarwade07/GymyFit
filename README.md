@@ -1,4 +1,4 @@
-# GymyFit
+# 𝐆𝐲𝐦𝐲𝐅𝐢𝐭 🏋️💪🏻
 GymyFit is built with your fitness goals in mind, offering a user-friendly and dynamic experience for all levels—from beginners to fitness enthusiasts. Join us on GymyFit to take control of your wellness journey, supported by tools and resources tailored to your needs!
 Explore GymyFit’s Key Features:
 🔹 Home Page – Discover our services and stay inspired with tailored fitness insights.
