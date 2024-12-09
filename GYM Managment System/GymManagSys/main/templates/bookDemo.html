@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Demo Session</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Background Gradient */
+    body {
+      background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+    /* Custom navbar styling */
+    .navbar {
+      background: linear-gradient(90deg, #000, #333); /* Black gradient */
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: #black;
+      font-size: 1.1rem;
+      padding-left: 20px;
+      padding-right: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: #000;
+      color: white;
+      border-radius: 10px;
+      transform: scale(1.05);
+    }
+
+    .dropdown-menu {
+      background-color: #000;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-item {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease;
+        }
+
+    .dropdown-item:hover {
+      background-color: #fff; /* Background turns white */
+      color: #000;
+      transform: scale(1.05); /* Slight zoom effect */
+    }
+
+    /* Form Styling */
+    .booking-form {
+      max-width: 700px;
+      margin: 100px auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-header h2 {
+      font-weight: bold;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    /* Interactive input effects */
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid #1d72b8;
+    }
+
+    .form-group label {
+      color: #ccc;
+    }
+
+    /* Button Styling */
+    .btn-custom {
+      background-color: #1d72b8;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 18px;
+      transition: 0.4s;
+    }
+
+    .btn-custom:hover {
+      background-color: #135a8a;
+      transform: scale(1.05);
+    }
+
+    /* Heading underline effect */
+    .form-header h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background-color: #1d72b8;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="font-size: 35px;">
+      <!-- Gym logo -->
+      <i class="fas fa-dumbbell" style="font-size: 30px;"></i> <!-- Adjust the size here -->
+      🇬 🇾 🇲 🇾 🇫 🇮 🇹
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">𝐇𝐨𝐦𝐞</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'bookDemo' %}">𝐁𝐨𝐨𝐤 𝐃𝐞𝐦𝐨</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pricing' %}">𝐏𝐫𝐢𝐜𝐢𝐧𝐠</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐔𝐬</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'profile' %}">𝐏𝐫𝐨𝐟𝐢𝐥𝐞</a></li>
+            <li><a class="dropdown-item" href="{% url 'signup' %}">𝐒𝐢𝐠𝐧𝐮𝐩</a></li>
+            <li><a class="dropdown-item" href="{% url 'login' %}">𝐋𝐨𝐠𝐢𝐧</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Form Section -->
+<div class="container">
+  <div class="booking-form">
+    <div class="form-header">
+      <h2>𝐒𝐜𝐡𝐞𝐝𝐮𝐥𝐞 𝐚 𝐃𝐞𝐦𝐨 𝐒𝐞𝐬𝐬𝐢𝐨𝐧</h2>
+    </div>
+
+    <!-- Form for Booking a Demo -->
+    <form method="POST" action="{% url 'success' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" class="form-control" id="name" name="full_name" placeholder="Enter your full name" required>
+      </div>
+      <br>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <br>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+        <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="Enter your phone number" required>
+      </div>
+      <br>
+
+      <!-- Preferred Day -->
+      <div class="form-group">
+        <label for="day"><i class="fas fa-calendar-alt"></i> Preferred Day</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+          <select class="form-control" id="day" name="preferred_day" required>
+            <option value="" disabled selected>Select a day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <!-- Preferred Time -->
+      <div class="form-group">
+        <label for="time"><i class="fas fa-clock"></i> Preferred Time</label>
+        <input type="time" class="form-control" id="time" name="preferred_time" required>
+      </div>
+      <br>
+      <br>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-custom"><i class="fas fa-calendar-check"></i> Book Now</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

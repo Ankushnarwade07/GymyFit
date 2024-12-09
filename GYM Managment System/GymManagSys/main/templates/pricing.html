@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+            background: linear-gradient(135deg, #000, #333); /* Black gradient background */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+    /* Custom navbar styling */
+        .navbar {
+            background: linear-gradient(90deg, #000, #333); /* Black gradient */
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #black;
+            font-size: 1.1rem;
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: black /* Background turns white */
+            color: black; /* Text turns black */
+            border-radius: 5px;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .dropdown-menu {
+            background-color: #000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #fff; /* Background turns white */
+            color: #000; /* Text turns black */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+
+        .dropdown-item:hover {
+            background-color: white;
+        }
+
+        /* Mobile menu style */
+        .navbar-toggler {
+            border: none;
+            background-color: #fff;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox%3D%220 0 30 30%22 xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath stroke%3D%22rgba%280, 0, 0, 1%29%22 stroke-width%3D%222%22 stroke-linecap%3D%22round%22 stroke-miterlimit%3D%2210%22 d%3D%22M4 7h22M4 15h22M4 23h22%22/%3E%3C/svg%3E');
+        }
+
+
+    /* Pricing Card Styling */
+    .pricing-card {
+        background-color: #2c2c2c;
+        border-radius: 15px;
+        padding: 30px;
+        color: #fff;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 5px solid transparent; /* Initial border is transparent */
+        height: 550px; /* Set fixed height for uniformity */
+    }
+
+    .pricing-card:hover {
+        transform: scale(1.05);
+        border-color: #1d72b8; /* Blue border on hover */
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* List Item Spacing */
+    ul.list-unstyled li {
+        margin: 15px 0; /* Increase space between list items */
+        display: flex; /* Use flexbox to align icon and text */
+        align-items: center; /* Center icon and text vertically */
+    }
+
+    ul.list-unstyled li i {
+        margin-right: 10px; /* Space between icon and text */
+        color: #1d72b8; /* Change color of the tick icon */
+        }
+
+
+    .pricing-header {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .pricing-features {
+      margin-bottom: 20px;
+    }
+
+    .pricing-features li {
+      margin: 10px 0;
+    }
+
+    /* Button styling */
+    .btn-primary, .btn-success, .btn-danger {
+      border-radius: 50px;
+      padding: 10px 20px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .btn-custom {
+      background-color: #1d72b8;
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 20px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #1d72b8;
+      border: 2px solid #1d72b8;
+      padding: 10px 20px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #1d72b8;
+      color: #fff;
+    }
+
+    /* Add some spacing */
+    .container {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .pricing-section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: 35px;">
+    <!-- Gym logo -->
+                <i class="fas fa-dumbbell" style="font-size: 30px;"></i> <!-- Adjust the size here -->
+                🇬 🇾 🇲 🇾 🇫 🇮 🇹
+            </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">𝐇𝐨𝐦𝐞</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'bookDemo' %}">𝐁𝐨𝐨𝐤 𝐃𝐞𝐦𝐨</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pricing' %}">𝐏𝐫𝐢𝐜𝐢𝐧𝐠</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactUs' %}">𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐔𝐬</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">𝐏𝐫𝐨𝐟𝐢𝐥𝐞</a></li>
+                            <li><a class="dropdown-item" href="{% url 'signup' %}">𝐒𝐢𝐠𝐧𝐮𝐩</a></li>
+                            <li><a class="dropdown-item" href="{% url 'login' %}">𝐋𝐨𝐠𝐢𝐧</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <!-- Pricing Section -->
+  <div class="container">
+  <h1 class="pricing-section-title">𝐌𝐞𝐦𝐛𝐞𝐫𝐬𝐡𝐢𝐩 𝐏𝐫𝐢𝐜𝐢𝐧𝐠</h1>
+  <div class="row text-center">
+    <!-- Free Plan -->
+    <div class="col-lg-4 col-md-6 mb-5">
+      <div class="pricing-card">
+        <div class="pricing-header">𝐅𝐫𝐞𝐞</div>
+        <div class="price"><b>₹0/ᵐᵒⁿᵗʰ</b></div>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle"></i> Access to all gym equipment</li>
+          <li><i class="fas fa-check-circle"></i> 3 group classes per week</li>
+          <li><i class="fas fa-check-circle"></i> Free locker</li>
+        </ul><br><br><br><br>
+        <a href="{% url 'signup' %}" class="btn btn-secondary"><b>Sign up for free</b></a>
+      </div>
+    </div>
+
+    <!-- Pro Plan -->
+    <div class="col-lg-4 col-md-6 mb-5">
+      <div class="pricing-card">
+        <div class="pricing-header"> 𝐏𝐫𝐨</div>
+        <div class="price"><b>₹2,999/ᵐᵒⁿᵗʰ</b></div>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle"></i> Access to all gym equipment</li>
+          <li><i class="fas fa-check-circle"></i> Unlimited group classes</li>
+          <li><i class="fas fa-check-circle"></i> Free locker and towel service</li>
+        </ul><br><br><br><br>
+        <a href="{% url 'paymentcheckout' %}" class="btn btn-custom"><b>Buy</b></a>
+      </div>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="col-lg-4 col-md-6 mb-5">
+      <div class="pricing-card">
+        <div class="pricing-header"> 𝐄𝐧𝐭𝐞𝐫𝐩𝐫𝐢𝐜𝐞</div>
+        <div class="price"><b>₹8,999/ᵐᵒⁿᵗʰ</b></div>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle"></i> Access to all gym equipment</li>
+          <li><i class="fas fa-check-circle"></i> Personal trainer sessions</li>
+          <li><i class="fas fa-check-circle"></i> Unlimited group classes</li>
+          <li><i class="fas fa-check-circle"></i> Free locker, towel, and premium support</li>
+        </ul><br><br><br>
+        <a href="{% url 'paymentcheckout' %}" class="btn btn-custom"><b>Buy</b></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

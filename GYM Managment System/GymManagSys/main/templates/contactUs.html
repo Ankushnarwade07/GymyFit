@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Background Gradient */
+    body {
+      background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+    /* Custom navbar styling */
+        .navbar {
+            background: linear-gradient(90deg, #000, #333); /* Black gradient */
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #black;
+            font-size: 1.1rem;
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #000;
+            color: white; /* Text turns black */
+            border-radius: 10px;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .dropdown-menu {
+            background-color: #000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #fff; /* Background turns white */
+            color: #000; /* Text turns black */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+
+        .dropdown-item:hover {
+            background-color: white;
+        }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header h2 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .contact-header h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background-color: #1d72b8;
+      margin: 10px auto;
+    }
+
+    /* Address Section */
+    .address-section {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .address-section h3 {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .address-section p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    /* Map Styling */
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: 35px;">
+    <!-- Gym logo -->
+                <i class="fas fa-dumbbell" style="font-size: 30px;"></i> <!-- Adjust the size here -->
+                🇬 🇾 🇲 🇾 🇫 🇮 🇹
+            </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">𝐇𝐨𝐦𝐞</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'bookDemo' %}">𝐁𝐨𝐨𝐤 𝐃𝐞𝐦𝐨</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pricing' %}">𝐏𝐫𝐢𝐜𝐢𝐧𝐠</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactUs' %}">𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐔𝐬</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">𝐏𝐫𝐨𝐟𝐢𝐥𝐞</a></li>
+                            <li><a class="dropdown-item" href="{% url 'signup' %}">𝐒𝐢𝐠𝐧𝐮𝐩</a></li>
+                            <li><a class="dropdown-item" href="{% url 'login' %}">𝐋𝐨𝐠𝐢𝐧</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <div class="container contact-container">
+    <div class="contact-header">
+      <h2>𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐔𝐬</h2>
+    </div>
+
+    <!-- Address Section -->
+    <div class="address-section">
+      <h3>𝐎𝐮𝐫 𝐆𝐲𝐦 𝐀𝐝𝐝𝐫𝐞𝐬𝐬</h3>
+      <p>123 Fitness Street, Gymville, Workout City, India</p>
+      <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+      <p><i class="fas fa-envelope"></i> contact@gymyfit.com</p>
+    </div>
+
+    <!-- Map Container -->
+    <div class="map-container">
+      <h3 class="text-center mb-4">𝐅𝐢𝐧𝐝 𝐔𝐬 𝐇𝐞𝐫𝐞</h3>
+      <!-- Google Maps Embed -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8584061861354!2d144.95373551561712!3d-37.81627967975162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sGym!5e0!3m2!1sen!2sus!4v1632728494945!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
